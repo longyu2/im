@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>
+        文件
+    </title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+
+    <div id="app">
+
+        用户：{{user}}
+
+        <div class="message-box">
+            <div class="message" v-for="item,index in list" :index="item">
+
+                <b> {{item.data.user}}:</b>
+                <br>
+
+
+                <p> {{item.data.content}}</p>
+                <p> {{item.data.createtime}}</p>
+            </div>
+        </div>
+
+
+        <div class="send-box " @keydown.enter="btnSend">
+
+            <input class="input" type="text" v-model="inp">
+            <button class="send" @click="btnSend">发送</button>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
