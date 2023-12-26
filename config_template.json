@@ -1,0 +1,5 @@
+{
+    "port": 6000,
+    "ssl_key": "./ssl.key",
+    "ssl_cert": "./ssl.crt"
+}

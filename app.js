@@ -5,12 +5,7 @@ const httpServ = require('https');
 const WebSocketServer = require('ws').Server; // 引用Server类
 
 // 一些配置信息
-const cfg = {
-    port: 10000,
-    ssl_key: 'ssl.key',
-    ssl_cert: 'ssl.crt'
-};
-
+const cfg = JSON.parse(fs.readFileSync("./config.json"));
 
 // 创建request请求监听器
 const processRequest = (req, res) => {
@@ -33,7 +28,7 @@ const wss = new WebSocketServer({
     server: app
 });
 
-
+console.log("服务已启动")
 
 
 wss.on('connection', function connection(ws) {
